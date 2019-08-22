@@ -1,0 +1,8 @@
+#Folders
+bin/*
+obj/*
+
+#C output files
+*.o
+*.exe
+*.sh
