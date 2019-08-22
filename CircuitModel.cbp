@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CircuitModel" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/CircuitModel" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add library="lib/console-lib64.a" />
+					<Add directory="lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/CircuitModel" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="include/Capacitance.h" />
+		<Unit filename="include/Circuit.h" />
+		<Unit filename="include/CircuitFileParser.h" />
+		<Unit filename="include/CircuitTraverser.h" />
+		<Unit filename="include/Component.h" />
+		<Unit filename="include/Graphic.h" />
+		<Unit filename="include/Manager.h" />
+		<Unit filename="include/Resistance.h" />
+		<Unit filename="include/components.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="include/console.h" />
+		<Unit filename="src/Capacitance.cpp" />
+		<Unit filename="src/Circuit.cpp" />
+		<Unit filename="src/CircuitFileParser.cpp" />
+		<Unit filename="src/CircuitTraverser.cpp" />
+		<Unit filename="src/Component.cpp" />
+		<Unit filename="src/Graphic.cpp" />
+		<Unit filename="src/Manager.cpp" />
+		<Unit filename="src/Resistance.cpp" />
+		<Unit filename="src/test.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

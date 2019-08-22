@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1566465184 source:c:\users\acer\circuitmodel\src\circuit.cpp
+	"Circuit.h"
+
+1566464671 c:\users\acer\circuitmodel\include\circuit.h
+	"Component.h"
+
+1566465048 c:\users\acer\circuitmodel\include\component.h
+	<stdlib.h>
+
+1566464640 source:c:\users\acer\circuitmodel\src\component.cpp
+	"Component.h"
+
+1566464537 source:c:\users\acer\circuitmodel\src\capacitance.cpp
+	"Capacitance.h"
+
+1566452092 c:\users\acer\circuitmodel\include\capacitance.h
+	"Component.h"
+
+1566469251 source:c:\users\acer\circuitmodel\src\circuitfileparser.cpp
+	"CircuitFileParser.h"
+
+1566465992 c:\users\acer\circuitmodel\include\circuitfileparser.h
+	<stdlib.h>
+	<stdio.h>
+	"Circuit.h"
+	"components.h"
+
+1566464302 c:\users\acer\circuitmodel\include\components.h
+	"Component.h"
+	"Resistance.h"
+	"Capacitance.h"
+
+1566452099 c:\users\acer\circuitmodel\include\resistance.h
+	"Component.h"
+
+1566472588 source:c:\users\acer\circuitmodel\src\test.cpp
+	"CircuitFileParser.h"
+	"Circuit.h"
+	"Graphic.h"
+
+1566464692 source:c:\users\acer\circuitmodel\src\resistance.cpp
+	"Resistance.h"
+
+1566477121 source:c:\users\acer\circuitmodel\src\graphic.cpp
+	"Graphic.h"
+
+1566475468 c:\users\acer\circuitmodel\include\graphic.h
+	<stdio.h>
+	"console.h"
+	"components.h"
+	"Circuit.h"
+
+1566200247 c:\users\acer\circuitmodel\include\console.h
+	<windows.h>
+
+1566469164 source:c:\users\acer\circuitmodel\src\circuittraverser.cpp
+	"CircuitTraverser.h"
+
+1566468219 c:\users\acer\circuitmodel\include\circuittraverser.h
+	"Circuit.h"
+
+1566465749 source:c:\users\acer\circuitmodel\src\manager.cpp
+	"Manager.h"
+
+1566469303 c:\users\acer\circuitmodel\include\manager.h
+	"components.h"
+	"Circuit.h"
+	"Graphic.h"
+	"CircuitFileParser.h"
+
