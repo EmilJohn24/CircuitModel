@@ -25,11 +25,13 @@ class Component
         virtual ~Component();
 
         void connectComponentToEntry(Component *_component){
-            entry.components[entry.count++] = _component;
+            entry.components[entry.count] = _component;
+            entry.count++;
         };
 
         void connectComponentToExit(Component *_component){
-            exit.components[exit.count++] = _component;
+            exit.components[exit.count] = _component;
+            exit.count++;
         };
 
         ComponentGroup getEntryComponents(){

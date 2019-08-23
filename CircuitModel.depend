@@ -5,7 +5,7 @@
 1566464671 c:\users\acer\circuitmodel\include\circuit.h
 	"Component.h"
 
-1566465048 c:\users\acer\circuitmodel\include\component.h
+1566542979 c:\users\acer\circuitmodel\include\component.h
 	<stdlib.h>
 
 1566464640 source:c:\users\acer\circuitmodel\src\component.cpp
@@ -17,10 +17,10 @@
 1566452092 c:\users\acer\circuitmodel\include\capacitance.h
 	"Component.h"
 
-1566469251 source:c:\users\acer\circuitmodel\src\circuitfileparser.cpp
+1566542792 source:c:\users\acer\circuitmodel\src\circuitfileparser.cpp
 	"CircuitFileParser.h"
 
-1566465992 c:\users\acer\circuitmodel\include\circuitfileparser.h
+1566542727 c:\users\acer\circuitmodel\include\circuitfileparser.h
 	<stdlib.h>
 	<stdio.h>
 	"Circuit.h"
@@ -34,7 +34,7 @@
 1566452099 c:\users\acer\circuitmodel\include\resistance.h
 	"Component.h"
 
-1566472588 source:c:\users\acer\circuitmodel\src\test.cpp
+1566542487 source:c:\users\acer\circuitmodel\src\test.cpp
 	"CircuitFileParser.h"
 	"Circuit.h"
 	"Graphic.h"
@@ -42,7 +42,7 @@
 1566464692 source:c:\users\acer\circuitmodel\src\resistance.cpp
 	"Resistance.h"
 
-1566477121 source:c:\users\acer\circuitmodel\src\graphic.cpp
+1566541973 source:c:\users\acer\circuitmodel\src\graphic.cpp
 	"Graphic.h"
 
 1566475468 c:\users\acer\circuitmodel\include\graphic.h
@@ -60,10 +60,11 @@
 1566468219 c:\users\acer\circuitmodel\include\circuittraverser.h
 	"Circuit.h"
 
-1566465749 source:c:\users\acer\circuitmodel\src\manager.cpp
+1566478418 source:c:\users\acer\circuitmodel\src\manager.cpp
 	"Manager.h"
 
-1566469303 c:\users\acer\circuitmodel\include\manager.h
+1566477356 c:\users\acer\circuitmodel\include\manager.h
+	<stdio.h>
 	"components.h"
 	"Circuit.h"
 	"Graphic.h"

@@ -18,6 +18,7 @@ class CircuitFileParser
 
     private:
         FILE *circuitFile;
+        FILE *log;
 };
 
 #endif // CIRCUITFILEPARSER_H

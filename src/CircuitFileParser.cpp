@@ -4,16 +4,20 @@ CircuitFileParser::CircuitFileParser(char *filename)
 {
     //ctor
     circuitFile = fopen(filename, "r+");
+    log = fopen("circuitParserLog.txt", "a");
 }
 
 CircuitFileParser::~CircuitFileParser()
 {
     //dtor
+    fclose(log);
+    fclose(circuitFile);
 
 }
 
 
 Component *CircuitFileParser::createComponent(double property, char symbol){
+    fprintf(log, "%lf %c\n", property, symbol);
     switch(symbol){
     case 'R':
         return new Resistance(property);
@@ -36,8 +40,6 @@ Circuit *CircuitFileParser::parse(){
         if (newComponent != NULL) newCircuit->addComponent(newComponent, index, adjacencyIndex);
     }
     return newCircuit;
-
-
 }
 
 void *CircuitFileParser::put(Circuit *circuit){

@@ -39,7 +39,7 @@ int Graphic::loadNextComponent(Component *explorer){
     for (int i = 0; i != size; i++){
         printf("Component ID: %d - %d\n", explorer->getModelID(), i);
         int next = loadNextComponent(explorer->getExitComponents().components[i]);
-        moveBrush(-next + 1, 0);
+        moveBrush(-next, 0);
         for (int i = 0; i != NODE_WIRE_LENGTH; i++){
             paint(HORIZONTAL_WIRE_CHAR);
             moveBrush(-1, 1);
