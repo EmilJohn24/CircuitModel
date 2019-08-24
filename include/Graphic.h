@@ -17,6 +17,7 @@ class Graphic
         char *INDUCTOR_HORIZONTAL = ")()()()()(";
         char *DC_VOLTAGE_SOURCE = "(-+)";
         char *CAPACITOR_HORIZONTAL = "| |";
+        char *AC_VOLTAGE_SOURCE = "(~)";
         //static const char *WIRE_CHAR = "-";
 
         Graphic(Circuit *_circuit, int _top, int _left): circuit(_circuit), top(_top), left(_left) {
@@ -24,6 +25,8 @@ class Graphic
             currentY = _top;
             color = TLWHITE;
         };
+        void setColor(int _color){ color = _color; };
+        void revertColor() { color = TLWHITE; };
 
         void loadCircuitGraphic();
         int loadNextComponent(Component *explorer, int *verticalDrop);

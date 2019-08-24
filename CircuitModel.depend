@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1566643572 source:c:\users\acer\circuitmodel\src\circuit.cpp
+1566649864 source:c:\users\acer\circuitmodel\src\circuit.cpp
 	"Circuit.h"
 	<stdio.h>
 
-1566625413 c:\users\acer\circuitmodel\include\circuit.h
+1566648336 c:\users\acer\circuitmodel\include\circuit.h
 	"Component.h"
 
-1566642066 c:\users\acer\circuitmodel\include\component.h
+1566649717 c:\users\acer\circuitmodel\include\component.h
 	<stdlib.h>
 	<string.h>
 
@@ -19,7 +19,7 @@
 1566628999 c:\users\acer\circuitmodel\include\capacitance.h
 	"Component.h"
 
-1566643786 source:c:\users\acer\circuitmodel\src\circuitfileparser.cpp
+1566646522 source:c:\users\acer\circuitmodel\src\circuitfileparser.cpp
 	"CircuitFileParser.h"
 
 1566640231 c:\users\acer\circuitmodel\include\circuitfileparser.h
@@ -29,12 +29,13 @@
 	"components.h"
 	<exception>
 
-1566624425 c:\users\acer\circuitmodel\include\components.h
+1566647249 c:\users\acer\circuitmodel\include\components.h
 	"Component.h"
 	"Resistance.h"
 	"Capacitance.h"
 	"Inductance.h"
 	"DCVoltage.h"
+	"ACVoltage.h"
 
 1566628992 c:\users\acer\circuitmodel\include\resistance.h
 	"Component.h"
@@ -45,10 +46,10 @@
 1566464692 source:c:\users\acer\circuitmodel\src\resistance.cpp
 	"Resistance.h"
 
-1566641373 source:c:\users\acer\circuitmodel\src\graphic.cpp
+1566647753 source:c:\users\acer\circuitmodel\src\graphic.cpp
 	"Graphic.h"
 
-1566633636 c:\users\acer\circuitmodel\include\graphic.h
+1566647730 c:\users\acer\circuitmodel\include\graphic.h
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -65,10 +66,10 @@
 1566468219 c:\users\acer\circuitmodel\include\circuittraverser.h
 	"Circuit.h"
 
-1566643254 source:c:\users\acer\circuitmodel\src\manager.cpp
+1566648528 source:c:\users\acer\circuitmodel\src\manager.cpp
 	"Manager.h"
 
-1566636521 c:\users\acer\circuitmodel\include\manager.h
+1566648428 c:\users\acer\circuitmodel\include\manager.h
 	<stdio.h>
 	"components.h"
 	"Circuit.h"
@@ -85,5 +86,11 @@
 	"DCVoltage.h"
 
 1566629048 c:\users\acer\circuitmodel\include\dcvoltage.h
+	"Component.h"
+
+1566647222 source:c:\users\acer\circuitmodel\src\acvoltage.cpp
+	"ACVoltage.h"
+
+1566646445 c:\users\acer\circuitmodel\include\acvoltage.h
 	"Component.h"
 

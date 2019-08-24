@@ -16,7 +16,11 @@ class Manager
         Component* adderExplorer(Component *_component, Component *_previousLayer, int numberMarker);
         void mainMenuChoiceHandler(int choice);
         void recentFileMenu();
+        void changePropertyOfComponentAt(int index, double property);
+        void adjustMenu();
         void adderMenu();
+        void deleteMenu();
+        void removeComponentAt(int index);
         virtual ~Manager();
         void everythingMenu();
         void runEverything(); //not a very good name but an endearing one

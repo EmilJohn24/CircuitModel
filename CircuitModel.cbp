@@ -37,24 +37,30 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/ACVoltage.h" />
 		<Unit filename="include/Capacitance.h" />
 		<Unit filename="include/Circuit.h" />
 		<Unit filename="include/CircuitFileParser.h" />
 		<Unit filename="include/CircuitTraverser.h" />
 		<Unit filename="include/Component.h" />
+		<Unit filename="include/DCVoltage.h" />
 		<Unit filename="include/Graphic.h" />
+		<Unit filename="include/Inductance.h" />
 		<Unit filename="include/Manager.h" />
 		<Unit filename="include/Resistance.h" />
 		<Unit filename="include/components.h">
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="include/console.h" />
+		<Unit filename="src/ACVoltage.cpp" />
 		<Unit filename="src/Capacitance.cpp" />
 		<Unit filename="src/Circuit.cpp" />
 		<Unit filename="src/CircuitFileParser.cpp" />
 		<Unit filename="src/CircuitTraverser.cpp" />
 		<Unit filename="src/Component.cpp" />
+		<Unit filename="src/DCVoltage.cpp" />
 		<Unit filename="src/Graphic.cpp" />
+		<Unit filename="src/Inductance.cpp" />
 		<Unit filename="src/Manager.cpp" />
 		<Unit filename="src/Resistance.cpp" />
 		<Unit filename="src/test.cpp">

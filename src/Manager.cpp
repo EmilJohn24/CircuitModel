@@ -118,6 +118,8 @@ void Manager::everythingMenu(){
     printf("Tool box: \n");
     printf("1. Add component in node\n");
     printf("2. Save circuit\n");
+    printf("3. Adjust component property\n");
+    printf("4. Delete component\n");
     printf("X. Exit\n");
     printf("What do you want to do? ");
     int choice;
@@ -130,6 +132,12 @@ void Manager::everythingMenu(){
     case 2:
         bridge->updateFile(circuit);
         break;
+    case 3:
+        adjustMenu();
+        break;
+    case 4:
+        deleteMenu();
+        break;
     case 'X':
         return;
     default:
@@ -140,6 +148,32 @@ void Manager::everythingMenu(){
 
 }
 
+void Manager::changePropertyOfComponentAt(int index, double property){
+    circuit->getComponentAt(index)->setMainProperty(property);
+}
+
+void Manager::removeComponentAt(int index){
+    circuit->removeComponentAt(index);
+
+}
+
+void Manager::deleteMenu(){
+    printf("type the number of the component you want to delete: ");
+    int choice;
+    scanf("%d", &choice);
+    removeComponentAt(choice);
+}
+
+void Manager::adjustMenu(){
+    printf("Type the number of the component you want to adjust: ");
+    int choice;
+    scanf("%d", &choice);
+    printf("Type the new value for that component: ");
+    double property;
+    scanf("%lf", &property);
+    changePropertyOfComponentAt(choice, property);
+
+}
 
 void Manager::addComponentInMarkedPoint(Component *_component, int numberMarker){
     nodeTracker = 1;
@@ -175,6 +209,7 @@ void Manager::adderMenu(){
     printf("2. Capacitor\n");
     printf("3. Inductor\n");
     printf("4. DC Source\n");
+    printf("5. AC Source\n");
     printf("Choose: ");
     int choice;
     scanf("%d", &choice);

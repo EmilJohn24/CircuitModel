@@ -55,6 +55,8 @@ Component *CircuitFileParser::createComponent(double property, char symbol){
         return new Inductance(property);
     case 'V':
         return new DCVoltage(property);
+    case 'A':
+        return new ACVoltage(property);
     default:
         return NULL;
 
@@ -87,6 +89,7 @@ char CircuitFileParser::getSymbolFromID(int id){
     else if (id == Capacitance::ID) return 'C';
     else if(id == Inductance::ID) return 'I';
     else if(id == DCVoltage::ID) return 'V';
+    else if(id == ACVoltage::ID) return 'A';
     else return 0;
 }
 

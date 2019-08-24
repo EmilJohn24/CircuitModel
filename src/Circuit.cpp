@@ -13,7 +13,7 @@ Circuit::~Circuit()
 }
 
 void Circuit::addComponent(Component* _component, Component* adjacentComponent){
-    printf("%d::::", maxIndex + 1);
+    //printf("%d::::", maxIndex + 1);
     addComponent(_component, maxIndex + 1, adjacentComponent->getReferenceIndex());
 }
 
@@ -30,3 +30,23 @@ void Circuit::addComponent(Component* _component, int index, int adjacencyIndex)
     }
 
 };
+
+
+void Circuit::removeComponentAt(int index){
+    //requires a smooth transfer of component connections
+    Component *tmp = getComponentAt(index);
+    int exitCount = tmp->getExitComponents().count;
+    int entryCount = tmp->getEntryComponents().count;
+    Component **oldExitConnectors = tmp->getExitComponents().components;
+    Component **oldEntryConnectors = tmp->getEntryComponents().components;
+    for (int i = 0; i != exitCount; i++){
+        oldExitConnectors[i]->disconnectComponentFromEntry(tmp);
+        for (int j = 0; j != entryCount; j++){
+            oldEntryConnectors[j]->disconnectComponentFromExit(tmp);
+            oldEntryConnectors[j]->connectComponentToExit(oldExitConnectors[i]);
+            oldExitConnectors[i]->connectComponentToEntry(oldEntryConnectors[j]);
+        }
+    }
+
+    delete tmp;
+}

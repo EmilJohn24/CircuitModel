@@ -52,11 +52,18 @@ int Graphic::loadNextComponent(Component *explorer, int *lastVerticalDrop){
         componentMovement += strlen(DC_VOLTAGE_SOURCE);
     }
 
-    moveBrush(0, -3);
+    else if (explorer->getModelID() == ACVoltage::ID){
+        paint(AC_VOLTAGE_SOURCE);
+        componentMovement += strlen(AC_VOLTAGE_SOURCE);
+    }
+
+    moveBrush(0, -2);
     char *tmp = (char*)malloc(sizeof(char) * 10);
     sprintf(tmp, "%d", explorer->getReferenceIndex());
+    setColor(TLYELLOW);
     paint(tmp);
-    moveBrush(strlen(tmp), 3);
+    revertColor();
+    moveBrush(strlen(tmp), 2);
 
     //paint measurement value
     //consider putting inside a function

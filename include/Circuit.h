@@ -9,8 +9,11 @@ class Circuit
         Circuit();
         virtual ~Circuit();
         Component *getRootComponent(){ return rootComponent; };
+        Component **getComponentArray() { return componentArray; };
+        Component *getComponentAt(int index) { return componentArray[index]; };
         void addComponent(Component* _component, int index, int adjacencyIndex);
         void addComponent(Component* _component, Component* adjacentComponent);
+        void removeComponentAt(int index);
 
     protected:
 

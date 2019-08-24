@@ -5,4 +5,5 @@
 #include "Capacitance.h"
 #include "Inductance.h"
 #include "DCVoltage.h"
+#include "ACVoltage.h"
 #endif // COMPONENTS_H_INCLUDED

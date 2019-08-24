@@ -6,7 +6,7 @@ class Component; //forward declaration for ComponentGroup
 typedef struct cpg{
     Component **components;
     int count;
-} ComponentGroup;
+} ComponentGroup
 
 class Component
 {
@@ -24,6 +24,39 @@ class Component
             exit.count = 0;
         };
         virtual ~Component();
+
+        void disconnectComponentFromExit(Component *_component){
+            int count = this->exit.count;
+            Component **components = this->exit.components;
+            for (int i = 0; i != count; i++){
+                if (_component == components[i]){
+                    for (int j = i; j != count - 1; j++){
+                        components[j] = components[j + 1];
+                    }
+                    this->exit.count--;
+
+                    break;
+                }
+            }
+
+        };
+
+        void disconnectComponentFromEntry(Component *_component){
+            int count = this->entry.count;
+            Component **components = this->entry.components;
+            for (int i = 0; i != count; i++){
+                if (_component == components[i]){
+                    for (int j = i; j != count - 1; j++){
+                        components[j] = components[j + 1];
+                    }
+                    this->entry.count--;
+
+                    break;
+                }
+            }
+
+
+        };
 
         void connectComponentToEntry(Component *_component){
             entry.components[entry.count] = _component;
@@ -50,6 +83,7 @@ class Component
         void setMainProperty(double _amount) { mainProperty = _amount; };
         void setReferenceIndex(int index){referenceIndex = index;};
         int getReferenceIndex(){ return referenceIndex; };
+
 
 
     protected:
