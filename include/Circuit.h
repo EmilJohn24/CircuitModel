@@ -10,12 +10,14 @@ class Circuit
         virtual ~Circuit();
         Component *getRootComponent(){ return rootComponent; };
         void addComponent(Component* _component, int index, int adjacencyIndex);
+        void addComponent(Component* _component, Component* adjacentComponent);
 
     protected:
 
     private:
         Component *rootComponent; //tree structure
         Component **componentArray; //direct random-access array
+        int maxIndex; //stores the highest index stored
 };
 
 #endif // CIRCUIT_H

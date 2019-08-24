@@ -7,7 +7,7 @@
 class Resistance : public Component
 {
     public:
-        static const char UNIT = 216;
+        static const char UNIT = 234;
         static const int ID = 1;
 
         Resistance(double resistance): Component(resistance, Resistance::UNIT, Resistance::ID){};

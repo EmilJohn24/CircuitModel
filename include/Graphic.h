@@ -1,17 +1,21 @@
 #ifndef GRAPHIC_H
 #define GRAPHIC_H
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "console.h"
 #include "components.h"
 #include "Circuit.h"
 class Graphic
 {
     public:
-        static const int NODE_WIRE_LENGTH = 5;
-        static const int BRANCHING_DISTANCE = 4;
+        static const int NODE_WIRE_LENGTH = 10;
+        static const int BRANCHING_DISTANCE = 5;
         char *WIRE_CHAR = "-";
         char *HORIZONTAL_WIRE_CHAR = "|";
         char *RESISTOR_HORIZONTAL = "\\/\\/\\/\\/";
+        char *INDUCTOR_HORIZONTAL = ")()()()()(";
+        char *DC_VOLTAGE_SOURCE = "(-+)";
         char *CAPACITOR_HORIZONTAL = "| |";
         //static const char *WIRE_CHAR = "-";
 
@@ -22,8 +26,9 @@ class Graphic
         };
 
         void loadCircuitGraphic();
-        int loadNextComponent(Component *explorer);
+        int loadNextComponent(Component *explorer, int *verticalDrop);
         virtual ~Graphic();
+
         void moveBrush(int dx, int dy){
             currentX += dx;
             currentY += dy;
@@ -34,7 +39,13 @@ class Graphic
             moveBrush(strlen(c), 0);
         };
 
-
+        void printNodeTrackerOnTopOfBrush(){
+            char *trackerText = (char *) malloc(sizeof(char) * 10);
+            sprintf(trackerText, "%d", nodeTracker);
+            moveBrush(0, -1);
+            paint(trackerText);
+            moveBrush(-strlen(trackerText), 1);
+        }
     protected:
 
     private:
@@ -44,6 +55,7 @@ class Graphic
         int top;
         int color;
         int left;
+        int nodeTracker;
 
 };
 

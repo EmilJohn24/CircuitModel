@@ -3,5 +3,6 @@
 #include "Component.h"
 #include "Resistance.h"
 #include "Capacitance.h"
-
+#include "Inductance.h"
+#include "DCVoltage.h"
 #endif // COMPONENTS_H_INCLUDED

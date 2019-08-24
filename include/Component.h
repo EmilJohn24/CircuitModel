@@ -1,7 +1,7 @@
 #ifndef COMPONENT_H
 #define COMPONENT_H
 #include <stdlib.h>
-
+#include <string.h>
 class Component; //forward declaration for ComponentGroup
 typedef struct cpg{
     Component **components;
@@ -13,6 +13,7 @@ class Component
     public:
 
         static const int COMPONENT_LIMIT = 100;
+        static const int NAME_LIMIT = 100;
         Component(double property, char unit, int id){
             mainProperty = property;
             propertyUnit = unit;
@@ -47,12 +48,14 @@ class Component
         virtual char getPropertyUnit() { return propertyUnit; };
         virtual double getMainProperty() { return mainProperty; };
         void setMainProperty(double _amount) { mainProperty = _amount; };
-
+        void setReferenceIndex(int index){referenceIndex = index;};
+        int getReferenceIndex(){ return referenceIndex; };
 
 
     protected:
 
     private:
+        int referenceIndex;
         double mainProperty;
         char propertyUnit;
         int modelID; //model ID to be used by graphics class for design reference
