@@ -17,6 +17,7 @@ void Manager::newCircuit(char *filename){
     FILE *tmp = fopen(filename, "w"); //creates the file
     fprintf(tmp, "1 V 5 0\n"); //default template
     fprintf(tmp, "2 R 100 1\n");
+    fprintf(tmp, "3 R 100 2\n");
     fclose(tmp);
     loadCircuit(filename);
 }
@@ -158,14 +159,14 @@ void Manager::removeComponentAt(int index){
 }
 
 void Manager::deleteMenu(){
-    printf("type the number of the component you want to delete: ");
+    printf("type the (yellow) number of the component you want to delete: ");
     int choice;
     scanf("%d", &choice);
     removeComponentAt(choice);
 }
 
 void Manager::adjustMenu(){
-    printf("Type the number of the component you want to adjust: ");
+    printf("Type the (yellow) number of the component you want to adjust: ");
     int choice;
     scanf("%d", &choice);
     printf("Type the new value for that component: ");

@@ -6,7 +6,7 @@ class Component; //forward declaration for ComponentGroup
 typedef struct cpg{
     Component **components;
     int count;
-} ComponentGroup
+} ComponentGroup;
 
 class Component
 {

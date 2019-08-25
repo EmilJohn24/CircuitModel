@@ -1,0 +1,61 @@
+# Project: CircuitModelProject
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = src/ACVoltage.o src/Capacitance.o src/Circuit.o src/CircuitFileParser.o src/CircuitTraverser.o src/Component.o src/DCVoltage.o src/Graphic.o src/Inductance.o src/Manager.o src/Resistance.o src/test.o
+LINKOBJ  = src/ACVoltage.o src/Capacitance.o src/Circuit.o src/CircuitFileParser.o src/CircuitTraverser.o src/Component.o src/DCVoltage.o src/Graphic.o src/Inductance.o src/Manager.o src/Resistance.o src/test.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc lib/console-lib64.a ./lib/console-lib64.a -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/ACER/CircuitModel/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/Users/ACER/CircuitModel/include"
+BIN      = CircuitModelProject.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+src/ACVoltage.o: src/ACVoltage.cpp
+	$(CPP) -c src/ACVoltage.cpp -o src/ACVoltage.o $(CXXFLAGS)
+
+src/Capacitance.o: src/Capacitance.cpp
+	$(CPP) -c src/Capacitance.cpp -o src/Capacitance.o $(CXXFLAGS)
+
+src/Circuit.o: src/Circuit.cpp
+	$(CPP) -c src/Circuit.cpp -o src/Circuit.o $(CXXFLAGS)
+
+src/CircuitFileParser.o: src/CircuitFileParser.cpp
+	$(CPP) -c src/CircuitFileParser.cpp -o src/CircuitFileParser.o $(CXXFLAGS)
+
+src/CircuitTraverser.o: src/CircuitTraverser.cpp
+	$(CPP) -c src/CircuitTraverser.cpp -o src/CircuitTraverser.o $(CXXFLAGS)
+
+src/Component.o: src/Component.cpp
+	$(CPP) -c src/Component.cpp -o src/Component.o $(CXXFLAGS)
+
+src/DCVoltage.o: src/DCVoltage.cpp
+	$(CPP) -c src/DCVoltage.cpp -o src/DCVoltage.o $(CXXFLAGS)
+
+src/Graphic.o: src/Graphic.cpp
+	$(CPP) -c src/Graphic.cpp -o src/Graphic.o $(CXXFLAGS)
+
+src/Inductance.o: src/Inductance.cpp
+	$(CPP) -c src/Inductance.cpp -o src/Inductance.o $(CXXFLAGS)
+
+src/Manager.o: src/Manager.cpp
+	$(CPP) -c src/Manager.cpp -o src/Manager.o $(CXXFLAGS)
+
+src/Resistance.o: src/Resistance.cpp
+	$(CPP) -c src/Resistance.cpp -o src/Resistance.o $(CXXFLAGS)
+
+src/test.o: src/test.cpp
+	$(CPP) -c src/test.cpp -o src/test.o $(CXXFLAGS)
