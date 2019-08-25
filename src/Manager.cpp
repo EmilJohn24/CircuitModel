@@ -2,6 +2,7 @@
 
 Manager::Manager()
 {
+    //loads the log and recent files
     log = fopen("manager.log", "w+");
     recentFile = fopen("recent.log", "a");
     //ctor
@@ -14,15 +15,18 @@ Manager::~Manager()
 }
 
 void Manager::newCircuit(char *filename){
+    //creates a new circuit file with a default template
     FILE *tmp = fopen(filename, "w"); //creates the file
     fprintf(tmp, "1 V 5 0\n"); //default template
     fprintf(tmp, "2 R 100 1\n");
-    fprintf(tmp, "3 R 100 2\n");
+    fprintf(tmp, "3 R 100 2");
     fclose(tmp);
-    loadCircuit(filename);
+    loadCircuit(filename);  //reopens the file in read-mode
 }
 
 void Manager::loadCircuit(char *filename){
+    //loads the circuit. If the file cannot be found, it catches the error
+    //and returns to the main menu
     try{
         this->bridge = new CircuitFileParser(filename);
         fprintf(recentFile, "%s\n", filename);
@@ -36,6 +40,7 @@ void Manager::loadCircuit(char *filename){
 }
 
 void Manager::mainMenu(){
+    //main menu
     printf("Welcome to Emil's circuit diagram maker.\n");
     printf("1. Create new diagram\n");
     printf("2. Load existing diagram\n");
@@ -75,6 +80,7 @@ void Manager::recentFileMenu(){
 
 }
 void Manager::mainMenuChoiceHandler(int choice){
+    //handles the selected choice from the main menu by redirecting to the appropriate function
     char *filename = (char*) malloc(sizeof(char) * 100);
     switch(choice){
     case 1:
@@ -105,7 +111,7 @@ void Manager::mainMenuChoiceHandler(int choice){
 }
 
 void Manager::runEverything(){
-
+    //loads the graphics and runs everything
     graphics = new Graphic(circuit, 30, 30);
     graphics->loadCircuitGraphic();
     //test
@@ -114,6 +120,7 @@ void Manager::runEverything(){
 }
 
 void Manager::everythingMenu(){
+    //displays implented doable actions
     system("cls");
     graphics->loadCircuitGraphic();
     printf("Tool box: \n");
@@ -178,12 +185,16 @@ void Manager::adjustMenu(){
 
 void Manager::addComponentInMarkedPoint(Component *_component, int numberMarker){
     nodeTracker = 1;
-    Component *adjacentComponent = adderExplorer(_component, circuit->getRootComponent(), numberMarker);
+    Component *adjacentComponent;
+    if (numberMarker == 1) adjacentComponent = circuit->getRootComponent();
+    else adjacentComponent = adderExplorer(_component, circuit->getRootComponent(), numberMarker);
     fprintf(log, "Adding to index %d\n", adjacentComponent->getReferenceIndex());
     circuit->addComponent(_component, adjacentComponent);
 }
 
 Component* Manager::adderExplorer(Component *_component, Component *_previousLayer, int numberMark){
+    //this function explores the component tree until it finds the component node it is looking for (as marked by the numberMark variable)
+    //it returns null if it has reached the end of a branch
     nodeTracker++;
     if (nodeTracker == numberMark) return _previousLayer;
     int size = _previousLayer->getExitComponents().count;

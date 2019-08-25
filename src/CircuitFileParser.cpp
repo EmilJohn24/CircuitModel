@@ -36,7 +36,7 @@ void CircuitFileParser::individualFileWrite(Component *current, int previousInde
     symbol = getSymbolFromID(current->getModelID());
     measurement = current->getMainProperty();
     fprintf(circuitFile, "%d %c %lf %d\n", index, symbol, measurement, adjacencyIndex);
-    //printf("Index:%d--Adjacent:%d %c %lf %d\n", index, previousIndex, symbol, measurement, adjacencyIndex);
+    printf("Saving index:%d--Adjacent:%d %c %lf %d\n", index, previousIndex, symbol, measurement, adjacencyIndex);
     for (int i = 0; i != counter; i++){
         next = current->getExitComponents().components[i];
         individualFileWrite(next, index);

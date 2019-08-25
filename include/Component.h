@@ -10,11 +10,13 @@ typedef struct cpg{
 
 class Component
 {
+    //base class for all circuit components
     public:
 
-        static const int COMPONENT_LIMIT = 100;
+        static const int COMPONENT_LIMIT = 100; //represents the maximum number of components placeable in the circuit
         static const int NAME_LIMIT = 100;
         Component(double property, char unit, int id){
+            //loads the main property, unit, and ID of the component
             mainProperty = property;
             propertyUnit = unit;
             modelID = id;
@@ -26,6 +28,7 @@ class Component
         virtual ~Component();
 
         void disconnectComponentFromExit(Component *_component){
+            //removes component from the list of exit components
             int count = this->exit.count;
             Component **components = this->exit.components;
             for (int i = 0; i != count; i++){
@@ -42,6 +45,7 @@ class Component
         };
 
         void disconnectComponentFromEntry(Component *_component){
+            //removes component from the list of entry components
             int count = this->entry.count;
             Component **components = this->entry.components;
             for (int i = 0; i != count; i++){
@@ -59,6 +63,7 @@ class Component
         };
 
         void connectComponentToEntry(Component *_component){
+            //connects a component to this component from the entry side
             entry.components[entry.count] = _component;
             entry.count++;
         };
@@ -68,6 +73,7 @@ class Component
             exit.count++;
         };
 
+        //setters and getters
         ComponentGroup getEntryComponents(){
             return entry;
         };

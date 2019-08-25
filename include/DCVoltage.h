@@ -6,6 +6,7 @@
 
 class DCVoltage : public Component
 {
+    //DC Voltage Source
     public:
         static const char UNIT = 'V';
         static const int ID = 4;

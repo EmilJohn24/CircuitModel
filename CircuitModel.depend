@@ -6,7 +6,7 @@
 1566648336 c:\users\acer\circuitmodel\include\circuit.h
 	"Component.h"
 
-1566698563 c:\users\acer\circuitmodel\include\component.h
+1566717911 c:\users\acer\circuitmodel\include\component.h
 	<stdlib.h>
 	<string.h>
 
@@ -16,13 +16,13 @@
 1566464537 source:c:\users\acer\circuitmodel\src\capacitance.cpp
 	"Capacitance.h"
 
-1566628999 c:\users\acer\circuitmodel\include\capacitance.h
+1566718156 c:\users\acer\circuitmodel\include\capacitance.h
 	"Component.h"
 
-1566646522 source:c:\users\acer\circuitmodel\src\circuitfileparser.cpp
+1566720952 source:c:\users\acer\circuitmodel\src\circuitfileparser.cpp
 	"CircuitFileParser.h"
 
-1566640231 c:\users\acer\circuitmodel\include\circuitfileparser.h
+1566718010 c:\users\acer\circuitmodel\include\circuitfileparser.h
 	<stdlib.h>
 	<stdio.h>
 	"Circuit.h"
@@ -46,10 +46,10 @@
 1566464692 source:c:\users\acer\circuitmodel\src\resistance.cpp
 	"Resistance.h"
 
-1566647753 source:c:\users\acer\circuitmodel\src\graphic.cpp
+1566720659 source:c:\users\acer\circuitmodel\src\graphic.cpp
 	"Graphic.h"
 
-1566647730 c:\users\acer\circuitmodel\include\graphic.h
+1566718115 c:\users\acer\circuitmodel\include\graphic.h
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -63,10 +63,10 @@
 1566469164 source:c:\users\acer\circuitmodel\src\circuittraverser.cpp
 	"CircuitTraverser.h"
 
-1566468219 c:\users\acer\circuitmodel\include\circuittraverser.h
+1566718144 c:\users\acer\circuitmodel\include\circuittraverser.h
 	"Circuit.h"
 
-1566648528 source:c:\users\acer\circuitmodel\src\manager.cpp
+1566720434 source:c:\users\acer\circuitmodel\src\manager.cpp
 	"Manager.h"
 
 1566648428 c:\users\acer\circuitmodel\include\manager.h
@@ -85,7 +85,7 @@
 1566623994 source:c:\users\acer\circuitmodel\src\dcvoltage.cpp
 	"DCVoltage.h"
 
-1566629048 c:\users\acer\circuitmodel\include\dcvoltage.h
+1566718025 c:\users\acer\circuitmodel\include\dcvoltage.h
 	"Component.h"
 
 1566647222 source:c:\users\acer\circuitmodel\src\acvoltage.cpp

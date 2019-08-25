@@ -11,6 +11,7 @@ class Graphic
     public:
         static const int NODE_WIRE_LENGTH = 10;
         static const int BRANCHING_DISTANCE = 5;
+        //some text designs for circuit components
         char *WIRE_CHAR = "-";
         char *HORIZONTAL_WIRE_CHAR = "|";
         char *RESISTOR_HORIZONTAL = "\\/\\/\\/\\/";
@@ -29,15 +30,17 @@ class Graphic
         void revertColor() { color = TLWHITE; };
 
         void loadCircuitGraphic();
-        int loadNextComponent(Component *explorer, int *verticalDrop);
+        int loadNextComponent(Component *explorer, int *verticalDrop); //loads the next component into the console recursively
         virtual ~Graphic();
 
         void moveBrush(int dx, int dy){
+            //moves the brush by a certain displacement
             currentX += dx;
             currentY += dy;
         };
 
         void paint(char *c){
+            //paints the passed string unto the console and moves the brush
             putxy(currentX, currentY, color, c);
             moveBrush(strlen(c), 0);
         };
@@ -53,8 +56,8 @@ class Graphic
 
     private:
         Circuit *circuit;
-        int currentX;
-        int currentY;
+        int currentX; //brush x-coord
+        int currentY; //brush y-coord
         int top;
         int color;
         int left;

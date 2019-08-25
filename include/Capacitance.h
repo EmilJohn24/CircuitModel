@@ -6,6 +6,7 @@
 
 class Capacitance : public Component
 {
+    //capacitor
     public:
         static const char UNIT = 'C';
         static const int ID = 2;
